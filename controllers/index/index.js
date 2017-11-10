@@ -3,11 +3,14 @@ const User = require('../../models/user');
 
 
 function index(req, res, next) {
-  User.find({}, (err, result) => {
+  res.render('users/index', {
+    title: "poop"
+  });
+  /*User.find({}, (err, result) => {
     res.render('users/index', {
       users: result
     });
-  });
+  });*/
 }
 
 function show(req, res, next) {

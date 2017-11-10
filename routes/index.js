@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const indexController = require('../controllers/index/index');
 
 /* GET users listing. */
-router.get('/', indexController.index);
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+module.exports = router;
