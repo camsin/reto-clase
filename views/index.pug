@@ -2,8 +2,24 @@ extends layout
 
 block content
   h1 RETO
-  table
-    thead
+
+  form.col-md-6(action='/create', method='post')
+    label(for='') Enter name:
+    input.form-control#name(type='text', name='name')
+    br
+    br
+    label(for='') Enter age:
+    input.form-control#age(type='number', name='age')
+    br
+    br
+    label(for='') Enter sex:
+    input.form-control#age(type='text', name='sex')
+    br
+    br
+    input.btn.btn-primary(type='submit', value='OK')
+
+  table.table.col-md-6.pull-right.table-bordered
+    thead.thead-dark
       tr
         th #
         th Nombre
@@ -12,22 +28,7 @@ block content
     tbody
       each user in users
         tr
-          th(scope="row") #{user._id}
+          th #{user._id}
           td #{user.name}
           td #{user.age}
           td #{user.sex}
-  p Welcome to RETO, EQUIPO DE 3
-  form(action='/create', method='post')
-    label(for='') Enter name:
-    input#name(type='text', name='name')
-    br
-    br
-    label(for='') Enter age:
-    input#age(type='number', name='age')
-    br
-    br
-    label(for='') Enter sex:
-    input#age(type='text', name='sex')
-    br
-    br
-    input(type='submit', value='OK')
