@@ -4,3 +4,8 @@ const indexController = require('../controllers/index/index');
 
 /* GET users listing. */
 router.get('/', indexController.index);
+
+router.post('/create', indexController.create);
+
+
+module.exports = router;
