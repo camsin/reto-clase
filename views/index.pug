@@ -2,6 +2,20 @@ extends layout
 
 block content
   h1 RETO
+  table
+    thead
+      tr
+        th #
+        th Nombre
+        th Edad
+        th Sexo
+    tbody
+      each user in users
+        tr
+          th(scope="row") #{user._id}
+          td #{user.name}
+          td #{user.age}
+          td #{user.sex}
   p Welcome to RETO, EQUIPO DE 3
   form(action='/create', method='post')
     label(for='') Enter name:
@@ -17,4 +31,3 @@ block content
     br
     br
     input(type='submit', value='OK')
-  
