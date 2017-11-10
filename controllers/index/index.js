@@ -24,7 +24,7 @@ function create(req, res, next) {
             res.send('error!!!!');
         } else {
             console.log("SI GUARFE");
-    res.redirect('/index');
+    res.redirect('/');
 }
 });
 
