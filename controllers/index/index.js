@@ -4,35 +4,33 @@ const User = require('../../models/user');
 
 function index(req, res, next) {
   User.find({}, (err, result) => {
-    res.render('users/index', {
+    res.render('index', {
       users: result
     });
   });
 }
 
-function show(req, res, next) {
-  res.send('Hola Express!!!!');
-}
-
 
 function create(req, res, next) {
-  let user = new User({
-    name: "Luis",
-    lastName: "Ramirez",
-    email: "l@uach.mx"
-  });
-  user.save((err) => {
-    if (err) {
-      res.send('error!!!!');
-    } else {
-      res.send('usuario creado!!!!');
-    }
-  });
+
+    let user = new User({
+        name: req.body.name,
+        age: req.body.age,
+        sex: req.body.sex
+    });
+    user.save((err) => {
+        if (err) {
+            console.log("ERROR", err);
+            res.send('error!!!!');
+        } else {
+            console.log("SI GUARFE");
+    res.redirect('/users/');
+}
+});
 
 }
 
 module.exports = {
   index,
-  show,
   create
 };
