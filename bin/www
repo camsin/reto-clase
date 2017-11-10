@@ -25,7 +25,7 @@ var server = http.createServer(app);
 
 
 /* Database conection*/
-mongoose.connect("mongodb://localhost/reto", {
+mongoose.connect("mongodb://ararat:291431@ds251985.mlab.com:51985/retodb", {
   useMongoClient: true
 });
 
